@@ -1,0 +1,32 @@
+
+### **DBMS (Database Management System)**
+
+* It is software used to **store, manage, and retrieve data**.
+* Data is stored in **files, folders, or tables**, but **not always in a structured way**.
+* Does **not support relationships** between data.
+* Example: **File system, XML database, hierarchical DBMS.**
+
+**Think of it like a basic cupboard** where you can store files, but they’re not linked or organized very efficiently.
+
+
+### **RDBMS (Relational Database Management System)**
+
+* It is a **type of DBMS** that stores data in **tables with rows and columns**.
+* Supports **relationships between tables** using keys (like **primary key**, **foreign key**).
+* Follows **rules of relational models** (like normalization).
+* Example: **MySQL, PostgreSQL, Oracle, SQL Server.**
+
+**Think of it like a smart cupboard** where every file is well-organized in drawers, and everything is connected logically.
+
+---
+
+###  **Quick Comparison Table:**
+
+| Feature        | DBMS                   | RDBMS                              |
+| -------------- | ---------------------- | ---------------------------------- |
+| Data Storage   | Files or simple tables | Structured tables (rows & columns) |
+| Relationships  | Not supported          | Supported                          |
+| Data Integrity | Less secure            | More secure and reliable           |
+| Examples       | XML DB, File system    | MySQL, Oracle, PostgreSQL          |
+
+
