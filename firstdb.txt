@@ -1,0 +1,77 @@
+mysql> CREATE DATABASE School;
+Query OK, 1 row affected (0.12 sec)
+
+mysql> USE School;
+Database changed
+mysql> CREATE TABLE Students(id INT PRIMARY KEY , name VARCHAR(50), age INT , grade VARCHAR(10));
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> INSERT INTO Student VALUES(101,"meenu",23,'s');
+ERROR 1146 (42S02): Table 'school.student' doesn't exist
+mysql> INSERT INTO Students VALUES(101,"meenu",23,'s');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO Students VALUES(102,"meena",22,'a');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO Students VALUES(103,"meera",24,'a+');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO Students VALUES(104,"mia",25,'s');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> SELECT*FROM Students
+    -> ;
++-----+-------+------+-------+
+| id  | name  | age  | grade |
++-----+-------+------+-------+
+| 101 | meenu |   23 | s     |
+| 102 | meena |   22 | a     |
+| 103 | meera |   24 | a+    |
+| 104 | mia   |   25 | s     |
++-----+-------+------+-------+
+4 rows in set (0.00 sec)
+
+mysql> UPDATE Students SET grade='b+' WHERE name = "mia"
+    -> ;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT*FROM Students;
++-----+-------+------+-------+
+| id  | name  | age  | grade |
++-----+-------+------+-------+
+| 101 | meenu |   23 | s     |
+| 102 | meena |   22 | a     |
+| 103 | meera |   24 | a+    |
+| 104 | mia   |   25 | b+    |
++-----+-------+------+-------+
+4 rows in set (0.00 sec)
+
+mysql> DELETE Students WHERE id = 103;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE id = 103' at line 1
+mysql> DELETE FROM Students WHERE id = 103;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> SELECT*FROM Students;
++-----+-------+------+-------+
+| id  | name  | age  | grade |
++-----+-------+------+-------+
+| 101 | meenu |   23 | s     |
+| 102 | meena |   22 | a     |
+| 104 | mia   |   25 | b+    |
++-----+-------+------+-------+
+3 rows in set (0.00 sec)
+
+mysql> DELETE FROM Students WHERE name = "mia"
+    -> ;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> SELECT*FROM Students;
++-----+-------+------+-------+
+| id  | name  | age  | grade |
++-----+-------+------+-------+
+| 101 | meenu |   23 | s     |
+| 102 | meena |   22 | a     |
++-----+-------+------+-------+
+2 rows in set (0.00 sec)
