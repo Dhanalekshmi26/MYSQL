@@ -18,7 +18,7 @@ In a **Students** table:
 
 ---
 
-### 🔗 **Foreign Key**
+###  **Foreign Key**
 
 * A column in one table that **refers to the primary key** in another table.
 * It creates a **relationship between two tables**.
