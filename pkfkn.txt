@@ -1,0 +1,82 @@
+
+###  **Primary Key**
+
+* A **column (or set of columns)** in a table that **uniquely identifies each row**.
+* **No duplicates** allowed.
+* **Cannot be NULL**.
+
+####  Example:
+
+In a **Students** table:
+
+| StudentID (Primary Key) | Name |
+| ----------------------- | ---- |
+| 101                     | Ram  |
+| 102                     | Sita |
+
+ `StudentID` is the **primary key**, because each student has a **unique ID**.
+
+---
+
+### 🔗 **Foreign Key**
+
+* A column in one table that **refers to the primary key** in another table.
+* It creates a **relationship between two tables**.
+* Used to **link data**.
+
+####  Example:
+
+**Students Table:**
+
+| StudentID | Name |
+| --------- | ---- |
+| 101       | Ram  |
+
+**Marks Table:**
+
+| MarkID | StudentID (Foreign Key) | Marks |
+| ------ | ----------------------- | ----- |
+| 1      | 101                     | 85    |
+
+ `StudentID` in the Marks table is a **foreign key**, pointing to the **primary key** in the Students table.
+
+
+
+###  **Normalization**
+
+* A process to **organize data in a database**.
+* It removes **redundancy (duplicate data)** and keeps data **consistent**.
+* Data is split into **multiple related tables**.
+
+#### Example:
+
+Instead of this:
+
+| StudentID | Name | Course1 | Course2 |
+| --------- | ---- | ------- | ------- |
+| 101       | Ram  | Math    | Science |
+
+Normalization makes it:
+**Students Table:**
+
+| StudentID | Name |
+| --------- | ---- |
+| 101       | Ram  |
+
+**Courses Table:**
+
+| StudentID | Course  |
+| --------- | ------- |
+| 101       | Math    |
+| 101       | Science |
+
+
+
+###  **When are they used?**
+
+| Concept           | When It’s Used                                                         |
+| ----------------- | ---------------------------------------------------------------------- |
+| **Primary Key**   | To uniquely identify records in a table.                               |
+| **Foreign Key**   | To connect tables and maintain relationships.                          |
+| **Normalization** | When designing a database to avoid duplication and improve efficiency. |
+
