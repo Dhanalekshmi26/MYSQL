@@ -16,9 +16,9 @@
 * Follows **rules of relational models** (like normalization).
 * Example: **MySQL, PostgreSQL, Oracle, SQL Server.**
 
-**Think of it like a smart cupboard** where every file is well-organized in drawers, and everything is connected logically.
+**Think of it like a smart cupboard** where every file is well-organized in drawers, and
+ everything is connected logically.
 
----
 
 ###  **Quick Comparison Table:**
 
