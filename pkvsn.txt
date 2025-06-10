@@ -1,0 +1,58 @@
+
+###  **Primary Key prevents duplicates only in one table**
+
+It makes sure **each row in that single table** is unique.
+But **normalization goes beyond that** — it helps organize the **entire database** to avoid **duplicate data 
+across different fields**.
+
+
+
+###  **Why Normalization is needed (with an example):**
+
+Imagine this **un-normalized table**:
+
+| StudentID (PK) | Name | Course1 | Course2 | Course3 |
+| -------------- | ---- | ------- | ------- | ------- |
+| 101            | Ram  | Math    | Science | NULL    |
+| 102            | Sita | Math    | English | History |
+
+* Here, `StudentID` is a **primary key** → no duplicate students.
+* But we’re **repeating course names** in different columns.
+* If a student takes 5 courses, we’d have to **add more columns**.
+* This design is **hard to scale**, **hard to search**, and has **redundant data**.
+
+
+###  **Normalized Version:**
+
+**Students Table**
+
+| StudentID (PK) | Name |
+| -------------- | ---- |
+| 101            | Ram  |
+| 102            | Sita |
+
+**Courses Table**
+
+| StudentID (FK) | Course  |
+| -------------- | ------- |
+| 101            | Math    |
+| 101            | Science |
+| 102            | Math    |
+| 102            | English |
+| 102            | History |
+
+* Now, **no repetition of column names**.
+* Easily scalable: you can add 100 courses if needed — just add rows.
+* Efficient for searching, filtering, and avoiding duplicate course entries.
+
+
+
+###  Summary:
+
+| Feature              | Primary Key               | Normalization                          |
+| -------------------- | ------------------------- | -------------------------------------- |
+| What it does         | Ensures row uniqueness    | Organizes data to remove redundancy    |
+| Scope                | One table only            | Entire database structure              |
+| Prevents duplicates? | Yes, for one row          | Yes, across fields and multiple tables |
+| Needed together?     |  Yes, they work together  |  Always normalize even if PK is used   |
+
