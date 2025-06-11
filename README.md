@@ -31,9 +31,6 @@ This project is dedicated to learning and practicing **SQL queries using MySQL**
 
 ---
 
-## 📁 Folder Structure
-
-
 
 ## 🧪 How to Use
 
