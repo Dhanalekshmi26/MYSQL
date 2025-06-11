@@ -1,0 +1,19 @@
+2. RIGHT JOIN – “All from Right, Matching from Left”
+Definition: Returns all rows from the right table (MARKS) and matched rows from the left (STUDENTS). 
+If no match in STUDENTS, name will be NULL.
+
+SELECT s.name, m.subject, m.score
+FROM STUDENTS s
+RIGHT JOIN MARKS m ON s.student_id = m.student_id;
+
++--------+-----------+-------+
+| name   | subject   | score |
++--------+-----------+-------+
+| RAVI   | PHYSICS   |    95 |
+| RAVI   | CHEMISTRY |    98 |
+| RAVI   | MATHS     |   100 |
+| NEHA   | MATHS     |    99 |
+| NEHA   | CHEMISTRY |   100 |
+| NEHA   | PHYSICS   |    99 |
+| NULL   | ENGLISH   |    85 |
++--------+-----------+-------+
