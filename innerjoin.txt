@@ -1,0 +1,64 @@
+
+##  What is INNER JOIN?
+
+An **INNER JOIN** connects **two tables** using a **common column**, and **returns 
+only the rows where there is a match** in both tables.
+
+
+
+###  Example:
+
+Imagine we have two tables:
+
+####  1. STUDENTS Table
+
+| student\_id | name  |
+| ----------- | ----- |
+| 1           | Ravi  |
+| 2           | Neha  |
+| 3           | Arjun |
+
+####  2. MARKS Table
+
+| student\_id | subject | score |
+| ----------- | ------- | ----- |
+| 1           | Math    | 90    |
+| 1           | Science | 85    |
+| 2           | Math    | 78    |
+
+
+
+###  INNER JOIN Query:
+
+We want to show:
+ Student's name, subject, and score.
+
+sql
+SELECT 
+    STUDENTS.name, 
+    MARKS.subject, 
+    MARKS.score
+FROM 
+    STUDENTS
+INNER JOIN 
+    MARKS
+ON 
+    STUDENTS.student_id = MARKS.student_id;
+
+
+###  What happens here?
+
+* It **joins** rows from `STUDENTS` and `MARKS` **where `student_id` matches**.
+* If a student has no marks → they are not shown.
+* If a mark doesn't have a matching student → it's not shown either.
+
+
+
+###  Output Example:
+
+| name | subject | score |
+| ---- | ------- | ----- |
+| Ravi | Math    | 90    |
+| Ravi | Science | 85    |
+| Neha | Math    | 78    |
+
