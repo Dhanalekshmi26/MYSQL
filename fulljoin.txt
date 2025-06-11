@@ -1,0 +1,14 @@
+ 3. FULL JOIN – Combine All Left + All Right
+MySQL Trick: MySQL does not have direct FULL JOIN. So we use UNION of LEFT + RIGHT
+
+SELECT s.name, m.subject, m.score
+FROM STUDENTS s
+LEFT JOIN MARKS m ON s.student_id = m.student_id
+
+UNION
+
+SELECT s.name, m.subject, m.score
+FROM STUDENTS s
+RIGHT JOIN MARKS m ON s.student_id = m.student_id;
+
+
