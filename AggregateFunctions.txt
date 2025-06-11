@@ -1,0 +1,17 @@
+Aggregate Functions
+These functions perform calculations on a column of data and return a single value.
+
+1. COUNT()
+Use: To count how many records exist.
+
+2. SUM()
+Use: To get the total of a numeric column.
+
+3. AVG()
+Use: To find the average (mean) value of a numeric column.
+
+4. MAX()
+Use: To find the highest value in a column.
+
+5. MIN()
+Use: To find the lowest value in a column.
