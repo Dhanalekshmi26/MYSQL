@@ -1,0 +1,31 @@
+Groups rows with the same value in a column so that you can apply aggregate functions like COUNT(), SUM(), AVG(), etc. 
+on each group.
+
+Synatx : SELECT column_name, AGGREGATE_FUNCTION(column) FROM table GROUP BY column_name;
+
+1)SELECT student_id, AVG(score) FROM SCHOOLDETAILS.marks GROUP BY student_id;
+
++------------+------------+
+| student_id | AVG(score) |
++------------+------------+
+|          1 |    97.6667 |
+|          2 |    99.3333 |
++------------+------------+
+
+2)SELECT student_id,SUM(score) FROM SCHOOLDETAILS.marks GROUP BY student_id;
+
++------------+------------+
+| student_id | SUM(score) |
++------------+------------+
+|          1 |        293 |
+|          2 |        298 |
++------------+------------+
+
+3)SELECT student_id,MAX(score),MIN(score)  FROM SCHOOLDETAILS.marks GROUP BY student_id; 
+
++------------+------------+------------+
+| student_id | MAX(score) | MIN(score) |
++------------+------------+------------+
+|          1 |        100 |         95 |
+|          2 |        100 |         99 |
++------------+------------+------------+
