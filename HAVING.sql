@@ -1,0 +1,1 @@
+SELECT student_id, AVG(score) AS avg_score FROM SCHOOLDETAILS.marks GROUP BY student_id HAVING avg_score > 90;
