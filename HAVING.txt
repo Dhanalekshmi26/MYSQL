@@ -1,0 +1,11 @@
+HAVING : HAVING is like WHERE, but it is used after GROUP BY to filter grouped results.
+
+SELECT student_id, AVG(score) AS avg_score FROM SCHOOLDETAILS.marks GROUP BY student_id HAVING avg_score > 90;
+
++------------+-----------+
+| student_id | avg_score |
++------------+-----------+
+|          1 |   97.6667 |
+|          2 |   99.3333 |
++------------+-----------+
+
