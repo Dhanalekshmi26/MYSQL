@@ -1,0 +1,57 @@
+1. Constraints
+
+Constraints are  rules you apply to columns to ensure **valid and consistent data**.
+
+
+
+a. `NOT NULL`
+
+This means the column must have a value.
+You can’t leave it empty.
+
+
+CREATE TABLE students (
+  id INT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL
+);
+
+
+Use Case: You don’t want a student’s name to be blank.
+
+
+b. `UNIQUE`
+
+Ensures all values in a column are different.
+
+CREATE TABLE students (
+  email VARCHAR(100) UNIQUE
+);
+
+
+ Use Case: No two students should have the same email.
+
+
+
+c. `DEFAULT`
+
+Gives a default value if no value is provided.
+
+
+CREATE TABLE students (
+  is_active BOOLEAN DEFAULT 1
+);
+
+
+ Use Case: New students are active by default.
+
+
+d. `CHECK`
+
+Used to limit values in a column.
+
+CREATE TABLE students (
+  age INT CHECK (age >= 18)
+);
+ Use Case: Age must be 18 or above to register.
+
+
