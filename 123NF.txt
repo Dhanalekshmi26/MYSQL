@@ -1,0 +1,69 @@
+###  **Unnormalized Table**:
+
+| StudentID | StudentName | Subjects      | DeptID | DeptName     |
+| --------- | ----------- | ------------- | ------ | ------------ |
+| 1         | Ravi        | Math, Physics | D1     | Science Dept |
+| 2         | Neha        | Chemistry     | D2     | Chem Dept    |
+| 3         | Ravi        | Math, Physics | D1     | Science Dept |
+
+---
+
+##  **Step 1: Convert to 1NF (First Normal Form)**
+
+**Rule:** No multivalued attributes → break up the `Subjects` field.
+
+| StudentID | StudentName | Subject   | DeptID | DeptName     |
+| --------- | ----------- | --------- | ------ | ------------ |
+| 1         | Ravi        | Math      | D1     | Science Dept |
+| 1         | Ravi        | Physics   | D1     | Science Dept |
+| 2         | Neha        | Chemistry | D2     | Chem Dept    |
+| 3         | Ravi        | Math      | D1     | Science Dept |
+| 3         | Ravi        | Physics   | D1     | Science Dept |
+
+---
+
+##  **Step 2: Convert to 2NF (Second Normal Form)**
+
+**Rule:** Remove partial dependencies (i.e., fields depending only on part of the primary key).
+Assume composite key was `(StudentID, Subject)`.
+
+###  Break into two tables:
+
+###  Students table:
+
+| StudentID | StudentName | DeptID |
+| --------- | ----------- | ------ |
+| 1         | Ravi        | D1     |
+| 2         | Neha        | D2     |
+| 3         | Ravi        | D1     |
+
+###  Subjects table:
+
+| StudentID | Subject   |
+| --------- | --------- |
+| 1         | Math      |
+| 1         | Physics   |
+| 2         | Chemistry |
+| 3         | Math      |
+| 3         | Physics   |
+
+###  Departments table:
+
+| DeptID | DeptName     |
+| ------ | ------------ |
+| D1     | Science Dept |
+| D2     | Chem Dept    |
+
+
+
+##  **Step 3: Convert to 3NF (Third Normal Form)**
+
+**Rule:** Remove transitive dependencies → ensure every non-key field depends **only** on the primary key.
+
+
+###  Final Tables in 3NF:
+
+1. **Students**: `StudentID, StudentName, DeptID`
+2. **Subjects**: `StudentID, Subject`
+3. **Departments**: `DeptID, DeptName`
+
