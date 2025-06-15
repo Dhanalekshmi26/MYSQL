@@ -1,0 +1,88 @@
+What is Normalization?
+
+Normalization is the process of organizing your database to:
+
+* **Remove redundancy (duplicate data)**
+* **Ensure data integrity (accuracy and consistency)**
+
+ Why is it Important?
+
+Without normalization:
+
+* You may store the same data multiple times (wastes space)
+* Updates can cause inconsistencies
+* Queries become harder to manage
+
+
+ 1NF (First Normal Form) – *Atomic Values Only*
+
+**Rule**: Each column must have **atomic (indivisible)** values.
+There should be **no multiple values** in a single cell.
+
+####  Bad (Not in 1NF):
+
+| Student | Subjects      |
+| ------- | ------------- |
+| Ravi    | Math, Physics |
+
+> Problem: Subjects are not atomic.
+
+####  Good (1NF):
+
+| Student | Subject |
+| ------- | ------- |
+| Ravi    | Math    |
+| Ravi    | Physics |
+
+
+###  2NF (Second Normal Form) – *No Partial Dependency*
+
+ **Rule**: Table must be in 1NF, and **every non-key column should depend on the whole primary key**.
+
+Applies mainly when you have **composite primary keys** (more than one column).
+
+####  Bad:
+
+| StudentID | Subject | StudentName |
+| --------- | ------- | ----------- |
+| 1         | Math    | Ravi        |
+
+> `StudentName` only depends on `StudentID`, not the full key (`StudentID + Subject`).
+
+####  Good (2NF):
+
+Break into 2 tables:
+
+* **Student Table**: `StudentID`, `StudentName`
+* **Marks Table**: `StudentID`, `Subject`
+
+
+
+###  3NF (Third Normal Form) – *No Transitive Dependency*
+
+ **Rule**: Table must be in 2NF, and **no non-key column should depend on another non-key column**.
+
+####  Bad:
+
+| ID | Name | DeptID | DeptName |
+| -- | ---- | ------ | -------- |
+
+> `DeptName` depends on `DeptID`, not `ID`. This is a **transitive dependency**.
+
+####  Good (3NF):
+
+Split into:
+
+* **Employee Table**: `ID`, `Name`, `DeptID`
+* **Department Table**: `DeptID`, `DeptName`
+
+
+
+##  Summary:
+
+| Normal Form | Key Rule                 |
+| ----------- | ------------------------ |
+| 1NF         | Atomic values            |
+| 2NF         | No partial dependency    |
+| 3NF         | No transitive dependency |
+
