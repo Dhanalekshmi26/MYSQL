@@ -1,3 +1,6 @@
+--Stored procedures = a saved SQL function you can call later.
+
+
 USE SCHOOLDETAILS;
 
 DELIMITER //
